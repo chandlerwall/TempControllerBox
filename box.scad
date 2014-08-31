@@ -11,7 +11,7 @@ module box_bottom()
         #translate([-temp_control_bezel_t-pad,(box_w - temp_control_bezel_w)/2,(box_h - temp_control_bezel_h)/2])
             temp_control_box();
 
-        #translate([90, (box_w - power_box_full_w)/2, -pad])
+        #translate([90, (box_w - power_box_full_wo)/2, -pad])
             power_box();
     }
 }

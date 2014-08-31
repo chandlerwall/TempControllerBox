@@ -2,7 +2,9 @@ include <config.scad>
 
 module power_box()
 {
-    translate([1, power_box_hole_offset + power_box_ro, 0])
+    translate([0, (power_box_full_wo - power_box_full_wi)/2, 0])
+    translate([0, power_box_hole_offset_i, 0])
+    translate([1, 2, 0])
         linear_extrude(height=power_box_z)
             union(){
                 minkowski(){
@@ -10,7 +12,7 @@ module power_box()
                     circle(r=1);
                 }
 
-                translate([(power_box_x - 2) / 2, -power_box_hole_offset, 0])
+                translate([(power_box_x - 2) / 2, -power_box_hole_offset_i, 0])
                     circle(r=power_box_ri);
                     *difference()
                     {
@@ -18,7 +20,7 @@ module power_box()
                         circle(r=power_box_ri);
                     }
 
-                translate([(power_box_x - 2) / 2, power_box_y + power_box_hole_offset, 0])
+                translate([(power_box_x - 2) / 2, power_box_y + power_box_hole_offset_i, 0])
                     circle(r=power_box_ri);
                     *difference()
                     {
@@ -27,5 +29,5 @@ module power_box()
                     }
             }
 
-    *square([power_box_x, power_box_full_w]);
+    %square([power_box_x, power_box_full_wo]);
 }
