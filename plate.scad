@@ -1,4 +1,8 @@
 use <box.scad>
+use <power_box.scad>
 
-// box
-box();
+// the bottom half
+box_bottom();
+
+// object "designer"
+//!power_box();
